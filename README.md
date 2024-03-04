@@ -1,4 +1,4 @@
- # duolingo    
+ # duolingo     
  
 [![Keep my Duolingo streak](https://github.com/adfastltda/duolingo/actions/workflows/streak-keeper.yml/badge.svg?branch=main)](https://github.com/adfastltda/duolingo/actions/workflows/streak-keeper.yml)
 

@@ -13,7 +13,7 @@ try {
 	);
 
 	const { fromLanguage, learningLanguage } = await fetch(
-		`https://www.duolingo.com/2024-04-14/users/${sub}?fields=fromLanguage,learningLanguage`,
+		`https://www.duolingo.com/2024-04-13/users/${sub}?fields=fromLanguage,learningLanguage`,
 		{
 			headers,
 		},
@@ -22,7 +22,7 @@ try {
 	let xp = 0;
 	for (let i = 0; i < process.env.LESSONS; i++) {
 		const session = await fetch(
-			"https://www.duolingo.com/2024-03-05/sessions",
+			"https://www.duolingo.com/2024-04-13/sessions",
 			{
 				body: JSON.stringify({
 					challengeTypes: [
@@ -98,7 +98,7 @@ try {
 		).then((response) => response.json());
 
 		const response = await fetch(
-			`https://www.duolingo.com/2024-03-05/sessions/${session.id}`,
+			`https://www.duolingo.com/2024-04-13/sessions/${session.id}`,
 			{
 				body: JSON.stringify({
 					...session,

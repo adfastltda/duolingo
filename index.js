@@ -13,7 +13,7 @@ try {
 	);
 
 	const { fromLanguage, learningLanguage } = await fetch(
-		`https://www.duolingo.com/2024-03-26/users/${sub}?fields=fromLanguage,learningLanguage`,
+		`https://www.duolingo.com/2024-04-14/users/${sub}?fields=fromLanguage,learningLanguage`,
 		{
 			headers,
 		},

@@ -1,0 +1,67 @@
+swagger: "2.0"
+info:
+  title: Duolingo Unofficial API (Main)
+  description: Unofficial API description for Duolingo.
+  version: 1.0.0
+host: www.duolingo.com
+basePath: /
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+
+securityDefinitions:
+  BearerAuth:
+    type: apiKey
+    name: Authorization
+    in: header
+
+security:
+  - BearerAuth: []
+
+paths:
+  /vocabulary/overview:
+    $ref: "./operations/vocabulary_overview.yaml"
+    
+  /2017-06-30/login:
+    $ref: "./operations/login.yaml"
+
+  /users/{username}:
+    $ref: "./operations/users_by_username.yaml"
+
+  /v2/mistakes/users/{userID}/courses/{courseID}/count:
+    $ref: "./operations/count_mistakes.yaml"
+
+  /2017-06-30/users/{userID}:
+    parameters:
+      - in: path
+        name: userID
+        required: true
+        type: integer
+        minimum: 1
+        description: User ID
+      - in: query
+        name: fields
+        type: array
+        items:
+          type: string
+        description: Fields to retrieve
+    $ref: "./operations/users_logged.yaml"
+
+  /2017-06-30/users:
+    $ref: "./operations/users_not_logged.yaml"
+
+  /2017-06-30/users/{userID}/subscriptions:
+    $ref: "./operations/subscriptions.yaml"
+
+  /2017-06-30/users/{userID}/xp_summaries:
+    $ref: "./operations/xpsummaries.yaml"
+
+  /2017-06-30/shop-items:
+    $ref: "./operations/shop_items.yaml"
+
+  /notifications:
+    $ref: "./operations/notifications.yaml"
